@@ -1,0 +1,36 @@
+.text {
+    padding: 80px;
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 20px;
+    text-align: center;
+
+    color: #cacaca;
+}
+.text h2 {
+    text-align: center;
+}
+
+.container{
+    display:grid;
+    columns: auto;
+    justify-items: center;
+    grid-gap: 20px;
+    
+}
+.itm{
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+
+.announcement{
+    padding-bottom: 60px;
+}
+
+.m_body{
+    padding-left:30px;
+    text-align: justify;
+}

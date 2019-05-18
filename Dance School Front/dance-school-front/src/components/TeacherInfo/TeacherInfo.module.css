@@ -1,0 +1,27 @@
+.text {
+    padding: 80px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 10px;
+
+    color: #cacaca;
+}
+.text h2 {
+    text-align: center;
+}
+
+.container{
+    display:grid;
+    columns: auto;
+    justify-items: center;
+    grid-gap: 20px;
+    
+}
+.itm{
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
