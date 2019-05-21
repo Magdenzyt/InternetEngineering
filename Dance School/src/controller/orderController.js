@@ -47,6 +47,7 @@ class OrderController{
 
             Course.find({_id: {$in: coursesIds}}).then((course) => {
                 if(!course) return;
+                console.log(course);
                 res.status(200).send(JSON.stringify(course,undefined,2));
             });
 

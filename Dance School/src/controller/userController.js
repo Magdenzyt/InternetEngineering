@@ -32,10 +32,11 @@ class UserController{
             .then(() => res.json({ User: finalUser.toAuthJSON() }));        
     }
 
+
+
     loginUser(req, res, next){
         console.log(req.body);
-        var myData = req.body;
-        console.log(myData);       
+        var myData = req.body;  
 
         if(!myData.username) {
             return res.status(422).json({
@@ -53,7 +54,7 @@ class UserController{
             });
         }
 
-        return passport.authenticate('local-login', { session: false }, (err, passportUser, info) => {
+        return passport.authenticate('local-login', { session: true }, (err, passportUser, info) => {
 
             if(err) {
                 return next(err);
@@ -65,7 +66,7 @@ class UserController{
                 console.log(user.token);
                 return res.json({ user: user.toAuthJSON() });
             }
-
+            
             return status(400).info;
         })(req, res, next);
     }
