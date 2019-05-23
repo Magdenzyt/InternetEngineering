@@ -3,6 +3,19 @@ import style from "./TeacherAdds.module.css";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class TeacherAdds extends Component {
+    constructor() {
+        super();
+        this.state = {
+          name: '',
+          surname: '',
+          username: '',
+          password: '',
+          confirmPassword: '',
+          error: '',
+        };
+    
+        this.handleTextChange = this.handlePassChange.bind(this);
+    }
     render() {
         return (
             <div className={style.text} id="addAnnouncement">

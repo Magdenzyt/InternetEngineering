@@ -4,6 +4,7 @@ import { ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
 
 class TeacherCourses extends Component {
+    
     render() {
         return (
             <div className = {style.text} id="teacherCourses">

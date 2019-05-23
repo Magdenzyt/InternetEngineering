@@ -17,11 +17,11 @@ class StudentHistory extends Component {
             withCredentials: true,
             credentials: 'same-origin',
             headers: {
-                'Authorization': 'Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1AbSIsImlkIjoiNWNkZTkyNmM0MDgwM2EyNTI0MDhiMDllIiwiZXhwIjoxNTYzNjEwMzY3LCJpYXQiOjE1NTg0MjYzNjd9.1hXziQdrCDIeoVG7RQvRJUeFmkH3i3jFgd1era5qDqs',
+                'Authorization': 'Token '+ data,
                 'Content-Type': 'application/json'
             }})
           .then(res => res.json())
-          //.then(res => this.setState({ his: res }))
+          .then(res => this.setState({ his: res }))
           .then(res => {
            console.log(res);
           }).catch(err => {
@@ -43,11 +43,11 @@ class StudentHistory extends Component {
 
             <h2>History</h2>
             <br></br>
+            {this.state.his.map(hi => (
             <ListGroup>
-                <ListGroupItem className="justify-content-between"><Badge pill>129zł</Badge></ListGroupItem>
-                <ListGroupItem className="justify-content-between">Kurs tańca na rurze <Badge pill>200zł</Badge></ListGroupItem>
-                <ListGroupItem className="justify-content-between">Talon na balon <Badge pill>300zł</Badge></ListGroupItem>
+                <ListGroupItem className="justify-content-between">{hi.name} <Badge pill>{hi.price}zł</Badge></ListGroupItem>
             </ListGroup>
+            ))}
             </div>
         );
     }

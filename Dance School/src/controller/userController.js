@@ -77,10 +77,11 @@ class UserController{
         return User.findById(id)
             .then((user) => {
                 if(!user) {
+                    console.log(user);
                 return res.sendStatus(400);
                 }
 
-                return res.json({ user: user.toAuthJSON() });
+                return res.json({ user: user.toAuthJSON()});
             });
 
     }
