@@ -9,7 +9,7 @@ class StudentPage extends Component {
   render() {
     return (
       <div>
-        <StudentInfo />
+        <StudentInfo {...this.props}/>
         <center><img src={stoper} height = "100" alt="" /></center>
         <StudentHistory />
       </div>

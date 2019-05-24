@@ -5,7 +5,7 @@ class CoursesPage extends Component {
   render() {
     return (
       <div>
-        <Courses />
+        <Courses {...this.props}/>
       </div>
     );
   }

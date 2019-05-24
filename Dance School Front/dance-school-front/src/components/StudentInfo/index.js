@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import style from "./StudentInfo.module.css";
+import {Button} from 'reactstrap';
 
 class StudentInfo extends Component {
     constructor(props) {
@@ -35,12 +36,16 @@ class StudentInfo extends Component {
         this.callAPI(data);
         console.log(this.state.inf);
       }
+      
     render() {
         return (
             
             <div className={style.text}>
+                
                 <h1>{this.state.name}</h1>
                 <h3>{this.state.surname}</h3>
+                <br></br>
+                <Button href="http://localhost:3000/login">Log out</Button>
                 <br></br>
             </div>
             

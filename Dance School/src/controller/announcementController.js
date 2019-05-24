@@ -8,6 +8,8 @@ class AnnouncementController{
     
         const { payload: { id } } = req;
 
+        console.log(req.body.text);
+
         var myData = new Announcement({teacherId: id, text: req.body.text, date: new Date()});
         myData.save()
         .then(item => {

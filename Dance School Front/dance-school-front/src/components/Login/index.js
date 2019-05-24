@@ -10,6 +10,7 @@ class Login extends Component {
       password: '',
       error: '',
     };
+    sessionStorage.setItem('userToken', '');
 
     this.handlePassChange = this.handlePassChange.bind(this);
     this.handleUserChange = this.handleUserChange.bind(this);

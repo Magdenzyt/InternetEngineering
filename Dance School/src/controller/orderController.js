@@ -10,12 +10,16 @@ class OrderController{
         
         const { payload: { id } } = req;
 
+        //console.log(req.body.courseId);
+        //console.log(id);
+
         var query = {studentId: id};
         Order.find(query).then((order)=>{
             if(!order) return;
             else 
                 var history = order.length;
           		Course.findById(req.body.courseId).then((course) => {
+
             		if(!course) return;
                 	var price = course.price;
                       price = Math.pow(0.80,history)*price;
@@ -23,8 +27,8 @@ class OrderController{
                     var myData = new Order({courseId: req.body.courseId, studentId: id});        
 
                     myData.save()
-                    .then(item => {
-                        res.send("Thank you for making an order! You have to pay: " + price);
+                    .then(()=> {
+                        res.send(JSON.stringify({price:price}));
                     })
                     .catch(err => {
                         console.log(err);

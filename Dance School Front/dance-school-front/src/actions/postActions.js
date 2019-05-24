@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-export function createRegisterPost(data) {
-    return fetch('http://localhost:8080/user/register', {
+export function createPost(data, link) {
+    return fetch(link, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
