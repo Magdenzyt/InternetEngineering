@@ -99,7 +99,7 @@ class UserController{
             if(!user) return;
             var us = [];
             for(var i =0; i< user.length; i++){
-                us[i] = {name: user[i].name, surname: user[i].surname}
+                us[i] = {uid: user[i]._id, name: user[i].name, surname: user[i].surname}
             }
             res.status(200).send(JSON.stringify(us,undefined,2));
         }).catch((e)=>{

@@ -21,14 +21,18 @@ class OrderController{
           		Course.findById(req.body.courseId).then((course) => {
 
             		if(!course) return;
-                	var price = course.price;
-                      price = Math.pow(0.80,history)*price;
+                	var mprice = course.price;
+                    mprice = Math.pow(0.80,history)*mprice;
+
+                    console.log(mprice);
+                
+                    
                       
                     var myData = new Order({courseId: req.body.courseId, studentId: id});        
 
                     myData.save()
                     .then(()=> {
-                        res.status(200).send(JSON.stringify({price:price}));
+                        res.status(200).send(JSON.stringify({price: mprice}));
                     })
                     .catch(err => {
                         console.log(err);

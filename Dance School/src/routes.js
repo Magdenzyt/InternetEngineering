@@ -56,6 +56,7 @@ class Routes{
 
         app.post("/teacher/addCourse", auth.required, this.roleAuthorization(['teacher']), courseController.addCourse);
         app.get("/teacher/students", auth.required, this.roleAuthorization(['teacher']), orderController.getCourseStudents);
+        app.get("/teacher/courses", auth.required, this.roleAuthorization(['teacher']), courseController.getTeacherCourses);
         app.post("/teacher/ad", auth.required, this.roleAuthorization(['teacher']),announcementController.addAnnouncement);
         app.post("/teacher/deleteAd", auth.required, this.roleAuthorization(['teacher']), announcementController.deleteAnnouncementByDate);
         

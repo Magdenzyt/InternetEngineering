@@ -20,7 +20,16 @@ class CourseController{
     }
 
     getCoursesByTeacherId(req, res){
+        console.log(req.body.teacherId);
         Course.find({teacherId: req.body.teacherId}).then((data)=>{
+            res.status(200).send(JSON.stringify(data,undefined,2))
+        }).catch((e)=>{
+            res.status(400).send(e);
+        });
+    }
+    getTeacherCourses(req, res){
+        const { payload: { id } } = req;
+        Course.find({teacherId: id}).then((data)=>{
             res.status(200).send(JSON.stringify(data,undefined,2))
         }).catch((e)=>{
             res.status(400).send(e);

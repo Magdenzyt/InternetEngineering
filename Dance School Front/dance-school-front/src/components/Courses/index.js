@@ -28,10 +28,12 @@ class Courses extends Component {
       .catch(err => err);
   }
 
-  connectTeachersCourses() {
+  connectTeachersCourses(){
+    console.log(this.state.courses);
+    console.log(this.state.teachers);
     for (var i = 0; i < this.state.courses.length; i++) {
       for (var j = 0; j < this.state.teachers.length; j++) {
-        if (this.state.courses[i].teachersId == this.state.teachers[j].id) {
+        if (this.state.courses[i].teacherId === this.state.teachers[j].uid) {
           this.state.CandT[i] = {
             courseID: this.state.courses[i]._id,
             courseName: this.state.courses[i].name,
@@ -43,6 +45,7 @@ class Courses extends Component {
         }
       }
     }
+    console.log(this.state.CandT);
   }
 
   componentDidMount() {
@@ -67,7 +70,9 @@ class Courses extends Component {
       }
     }).then(res => res.json())
     .then(res => {
-        localStorage.setItem('price',res['price']);
+        console.log(res['price']);
+        let tmp = res['price'];
+        localStorage.setItem('price',tmp);
     }).catch(err => {
       console.error(err);
       alert('Error');

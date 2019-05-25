@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class ThankYou extends Component {
     
     render() {
+      console.log(localStorage.getItem('price'));
         return (
           <div className={style.text}>            
               <h1>Thank You for buying this course!</h1>
