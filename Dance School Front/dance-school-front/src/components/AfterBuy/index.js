@@ -10,7 +10,7 @@ class ThankYou extends Component {
               <h1>Thank You for buying this course!</h1>
               <br />
               <br />    
-              <h3>You have to pay: </h3>         
+              <h3>You have to pay: {localStorage.getItem('price').substring(0,6)}</h3>         
               <br />
               <br />
               <h3>Account number: 1234 5678 9876 5432</h3>   

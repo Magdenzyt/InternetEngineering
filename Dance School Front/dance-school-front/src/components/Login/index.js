@@ -44,6 +44,7 @@ class Login extends Component {
       .then(res=>{
         sessionStorage.setItem('userToken', res["user"]["token"]);
         sessionStorage.setItem('userRole', res["user"]["role"]);
+        sessionStorage.setItem('userId', res["user"]["_id"]);
         if(res["user"]["role"]==="student")
           this.props.history.push('/student');
         if(res["user"]["role"]==="teacher")

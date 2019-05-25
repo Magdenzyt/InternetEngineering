@@ -65,6 +65,9 @@ class Courses extends Component {
         'Authorization': 'Token ' + data,
         'Content-Type': 'application/json'
       }
+    }).then(res => res.json())
+    .then(res => {
+        localStorage.setItem('price',res['price']);
     }).catch(err => {
       console.error(err);
       alert('Error');

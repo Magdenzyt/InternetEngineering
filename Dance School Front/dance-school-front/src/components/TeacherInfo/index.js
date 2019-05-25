@@ -43,6 +43,9 @@ class TeacherInfo extends Component {
                 <h1>{this.state.name}</h1>
                 <h3>{this.state.surname}</h3>
                 <br></br>
+                <Button href="http://localhost:3000/login">Log out</Button>
+                <br></br>
+                <br></br>
                 <ButtonGroup>
                     <Button href="http://localhost:3000/teacher/#addAnnouncement">Add announcement</Button>
                     <Button href="http://localhost:3000/teacher/#teacherCourses">My courses</Button>

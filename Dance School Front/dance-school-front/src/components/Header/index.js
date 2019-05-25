@@ -32,6 +32,17 @@ class Header extends Component {
   }
   
   render() {
+    let data = sessionStorage.getItem('userToken');
+    let type = sessionStorage.getItem('userRole');
+    let a = '';
+    if (data){
+      if(type==='teacher')
+        a = '/teacher';
+      else
+        a = '/student';
+
+    }else
+      a = '/login';
     return (
       <div>
         <Navbar className = "navbar navbar-dark bg-dark" light expand="md" >
@@ -49,7 +60,7 @@ class Header extends Component {
                 <NavLink href="http://localhost:3000/#Contact" >Contact</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/login/" >Profile</NavLink>
+                <NavLink href={a} >Profile</NavLink>
               </NavItem>
               
             </Nav>

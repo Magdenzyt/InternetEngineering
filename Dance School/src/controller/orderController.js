@@ -28,7 +28,7 @@ class OrderController{
 
                     myData.save()
                     .then(()=> {
-                        res.send(JSON.stringify({price:price}));
+                        res.status(200).send(JSON.stringify({price:price}));
                     })
                     .catch(err => {
                         console.log(err);
